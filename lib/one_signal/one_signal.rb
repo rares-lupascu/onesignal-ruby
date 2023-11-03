@@ -48,6 +48,7 @@ module OneSignal
 
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = uri.scheme == 'https'
+      http.verify_mode = 0
       http.open_timeout = @@open_timeout
       http.read_timeout = @@read_timeout
       return http
